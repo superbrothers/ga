@@ -1,0 +1,45 @@
+{
+  "name": "ga",
+  "version": "0.1.0",
+  "description": "The GitHub Actions helper command-line tool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/index.ts",
+    "lint:fix": "eslint --fix src/index.ts",
+    "build": "tsc",
+    "start": "ts-node ./src/index.ts",
+    "ts-node": "ts-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superbrothers/ga.git"
+  },
+  "author": "Kazuki Suda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/superbrothers/ga/issues"
+  },
+  "homepage": "https://github.com/superbrothers/ga#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.2",
+    "commander": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.0",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  }
+}
