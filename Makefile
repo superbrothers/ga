@@ -11,7 +11,7 @@ image:
 
 .PHONY: push-image
 push-image:
-		doker push $(IMAGE)
+		docker push $(IMAGE)
 
 .PHONY: dist
 dist:
