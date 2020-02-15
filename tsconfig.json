@@ -9,6 +9,6 @@
     "resolveJsonModule": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*.ts"
   ]
 }

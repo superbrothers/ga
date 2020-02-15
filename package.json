@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint src/index.ts",
-    "lint:fix": "eslint --fix src/index.ts",
+    "lint": "eslint **/*.ts",
+    "lint:fix": "eslint --fix **/*.ts",
     "build": "tsc",
     "start": "ts-node ./src/index.ts",
     "ts-node": "ts-node"
