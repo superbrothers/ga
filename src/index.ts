@@ -1,7 +1,12 @@
 import * as commander from "commander";
 import * as core from "@actions/core";
 import * as os from "os";
-import { description, version } from "../package.json";
+import * as fs from "fs";
+import * as path from "path";
+
+const { description, version } = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "../package.json"), "utf8")
+);
 
 const ga = new commander.Command("ga");
 

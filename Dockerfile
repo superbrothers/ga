@@ -14,8 +14,9 @@ RUN set -x && \
     npm run build
 
 FROM node:${NODE_VERSION}-slim
+WORKDIR /app
 COPY package*.json ./
 RUN set -x && npm install --only=production
-COPY --from=0 /app/dist/src /app
+COPY --from=0 /app/lib /app/lib
 COPY LICENSE /app/LICENSE
-ENTRYPOINT ["node", "/app/index.js"]
+ENTRYPOINT ["node", "/app/lib/index.js"]

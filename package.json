@@ -2,11 +2,11 @@
   "name": "ga",
   "version": "0.1.0",
   "description": "The GitHub Actions helper command-line tool.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint src/index.ts",
-    "lint:fix": "eslint --fix src/index.ts",
+    "lint": "eslint **/*.ts",
+    "lint:fix": "eslint --fix **/*.ts",
     "build": "tsc",
     "start": "ts-node ./src/index.ts",
     "ts-node": "ts-node"
