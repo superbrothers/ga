@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "description": "The GitHub Actions helper command-line tool.",
   "main": "lib/index.js",
+  "bin": "bin/cli.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint **/*.ts",
     "lint:fix": "eslint --fix **/*.ts",
     "build": "tsc",
-    "start": "ts-node ./src/index.ts",
+    "start": "npm run build && node bin/cli.js",
     "ts-node": "ts-node"
   },
   "repository": {
@@ -39,6 +40,10 @@
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
   },
+  "files": [
+    "/lib",
+    "LICENSE"
+  ],
   "jest": {
     "preset": "ts-jest"
   }
