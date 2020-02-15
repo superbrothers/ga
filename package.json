@@ -2,7 +2,7 @@
   "name": "ga",
   "version": "0.1.0",
   "description": "The GitHub Actions helper command-line tool.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint **/*.ts",
