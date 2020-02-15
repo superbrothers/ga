@@ -1,5 +1,6 @@
 import * as commander from "commander";
 import * as core from "@actions/core";
+import * as os from "os";
 import { description, version } from "../package.json";
 
 const ga = new commander.Command("ga");
@@ -39,7 +40,7 @@ ga.command("get-input <name>")
     try {
       const value: string = core.getInput(name, inputOptions);
       if (value !== "") {
-        process.stdout.write(`${value}\n`);
+        process.stdout.write(`${value}${os.EOL}`);
       }
     } catch (e) {
       process.stderr.write(e.message);
@@ -99,7 +100,7 @@ ga.command("get-state <name>")
     "Gets the value of an state set by this action's main execution."
   )
   .action(name => {
-    process.stdout.write(`${core.getState(name)}\n`);
+    process.stdout.write(`${core.getState(name)}${os.EOL}`);
   });
 
 /**
