@@ -5,7 +5,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 const { description, version } = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "../package.json"), "utf8")
+  fs.readFileSync(path.join(__dirname, "..", "package.json"), "utf8")
 );
 
 const ga = new commander.Command("ga");
@@ -111,12 +111,12 @@ ga.command("get-state <name>")
 /**
  * Other commands will be redirected to the help message.
  */
-ga.command("*").action(() => ga.help());
-
-if (require.main === module) {
-  ga.parse(process.argv);
-
-  if (ga.args.length === 0) ga.help();
-}
+ga.command("*").action(() => {
+  console.error(
+    "Invalid command: %s\nSee --help for a list of available commands.",
+    ga.args.join(" ")
+  );
+  process.exit(1);
+});
 
 export = ga;

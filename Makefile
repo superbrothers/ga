@@ -30,7 +30,7 @@ verify:
 
 .PHONY: clean
 clean:
-		$(RM) ga.zip ga.zip.sha256
+		$(RM) ga.zip ga.zip.sha256 *.tgz
 
 .PHONY: run-in-node
 run-in-node:
