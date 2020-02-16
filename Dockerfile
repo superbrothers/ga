@@ -8,7 +8,6 @@ COPY . .
 RUN set -x && \
     apt-get update -qq && \
     apt-get install -qy jq && \
-    make verify && \
     npm run lint && \
     npm run test && \
     npm run build
