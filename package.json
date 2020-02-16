@@ -1,6 +1,6 @@
 {
   "name": "@superbrothers/ga",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The GitHub Actions helper command-line tool.",
   "main": "lib/index.js",
   "bin": "bin/cli.js",
