@@ -16,12 +16,16 @@ If you want to create or update an environment variable for any actions running 
 ga set-env VERSION "$(cat VERSION)"
 ```
 
-If you want to use the execution result in the following steps, you can use the "ga set-output" command as follows:
+If you want to use the execution result in the following steps, you can use the "ga set-output" command with [superbrothers/setup-ga](https://github.com/superbrothers/setup-ga) as follows:
 
 ```yaml
 steps:
 - name: Checkout code
   uses: actions/checkout@v2
+- name: Setup ga tool
+  uses: superbrothers/setup-ga@v1
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Avoid rate-limit error
 - name: Get version
 - run: |
     ga set-output version "$(cat VERSION)"
@@ -33,6 +37,18 @@ steps:
   with:
     tag_name: ${{ steps.get_version.outputs.version }}
     release_name: Release ${{ steps.get_version.outputs.version }}
+```
+
+If you want to install ga tool to your environment directly:
+```yaml
+steps:
+- uses: actions/checkout@v2
+- uses: setup-node@v1
+  with:
+    node-version: "12.x"
+- run: npm install -g @superbrothers/ga
+- run: ga set-output version "$(cat VERSION)"
+  id: get_version
 ```
 
 All available ga subcommands are as follow:
