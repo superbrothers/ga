@@ -22,7 +22,7 @@ jobs:
       with:
         fetch-depth: 1
     - run: make image
-    - run: bin/ga --help
+    - run: bin/ga set-output name value | grep "set-output"
   test:
     strategy:
       matrix:

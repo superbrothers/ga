@@ -17,5 +17,6 @@ WORKDIR /app
 COPY package*.json ./
 RUN set -x && npm install --only=production
 COPY --from=0 /app/lib /app/lib
+COPY bin/cli.js /app/bin/cli.js
 COPY LICENSE /app/LICENSE
-ENTRYPOINT ["node", "/app/lib/index.js"]
+ENTRYPOINT ["node", "/app/bin/cli.js"]
