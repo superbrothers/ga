@@ -2,11 +2,11 @@
 
 ![CI](https://github.com/superbrothers/ga/workflows/CI/badge.svg)
 
-ga is a tool that provides for setting results, logging, registering secrets and exporting variables across actions.
+You no longer need to use `echo "::set-env ...` directly in your workflow!
 
 ## What is ga?
 
-ga is [@actions/core](https://github.com/actions/toolkit/tree/master/packages/core) as command-line tool that allows you to easily communicate with the GitHub Actions runner machine to set environment variables, output values used by other actions, and debug messages to the output logs, and other tasks.
+ga is [@actions/core](https://github.com/actions/toolkit/tree/master/packages/core) as a command-line tool that allows you to easily communicate with the GitHub Actions runner machine to set environment variables, output values used by other actions, and debug messages to the output logs, and other tasks. You no longer need to use `echo "::set-env ...` directly in your workflow steps. There is also [superbrothers/setup-ga](https://github.com/superbrothers/ga), which sets up ga tool quickly.
 
 ## Usage
 
