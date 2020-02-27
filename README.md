@@ -87,6 +87,25 @@ Commands:
 
 ```
 
+## Examples
+
+### Use downloaded commands in subsequent steps
+
+```yaml
+steps:
+- uses: superbrothers/setup-ga@v1
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+- name: Setup kubectl
+  run: |
+    set -x
+    toolPath="$(mktemp -d)"
+    curl -o "${toolPath}/kubectl" -L -s https://storage.googleapis.com/kubernetes-release/release/v1.17.0/bin/linux/amd64/kubectl
+    chmod +x "${toolPath}/kubectl"
+    ga add-path "$toolPath"
+- run: kubectl version --client
+```
+
 ## References
 
 - [Development tools for GitHub Actions \- GitHub Help](https://help.github.com/en/actions/reference/development-tools-for-github-actions)
